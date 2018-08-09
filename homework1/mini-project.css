@@ -1,0 +1,31 @@
+body {
+  background: no-repeat top/100% url("iphonex.png");
+}
+
+a {
+  text-decoration: none;
+}
+
+.intro, .interest {
+  text-align: center;
+  font-family: helvetica;
+  color: black;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.nav {
+  background-color: black;
+  list-style-type: none;
+  text-align: center;
+}
+
+.nav__item {
+  display: inline-block;
+}
+
+.nav__item a {
+  color: white;
+}
