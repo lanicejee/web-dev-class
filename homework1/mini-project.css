@@ -1,31 +1,74 @@
 body {
-  background: no-repeat top/100% url("iphonex.png");
+  background: no-repeat 100% url("iphonex.png");
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-color: #F2F2F2;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 a {
   text-decoration: none;
 }
 
-.intro, .interest {
-  text-align: center;
-  font-family: helvetica;
-  color: black;
-}
-
-a:hover{
-  text-decoration: underline;
-}
-
-.nav {
-  background-color: black;
+.topnav {
+  background-color: #3A3939;
   list-style-type: none;
   text-align: center;
+  width: 100%;
+  padding: 14px 16px;
+  margin: -10px;
 }
 
 .nav__item {
   display: inline-block;
+  width: 9%;
+  font-size: 13px;
+  font-weight: lighter;
 }
 
 .nav__item a {
   color: white;
+}
+
+.nav__item a:hover {
+  color: #B0B0B0;
+}
+
+.intro {
+  text-align: center;
+  color: black;
+}
+
+.intro__blurb__1 {
+  margin-top: 75px;
+  margin-bottom: 0;
+  font-size: 350%;
+  font-weight: 600;
+}
+
+.intro__blurb__2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 150%;
+  font-weight: 300;
+}
+
+.interest {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: 110%;
+}
+
+.interest a {
+  color: #397AE7;
+  font-weight: lighter;
+}
+
+.interest a:hover {
+  text-decoration: underline;
+  color: #397AE7;
+}
+
+.interest a:visited {
+  color: #397AE7;
 }
