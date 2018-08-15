@@ -46,7 +46,8 @@ function numberArrayValidator(arr) {
 function objectHasNameProp(obj) {
   if("name" in obj === true) {
     return true;
-  } else {
+  }
+  else {
     return false;
   }
 }
@@ -72,7 +73,8 @@ console.log(objectHasNameProp(me));
 function addNamePropToObject(obj) {
   if(typeof obj !== 'object') {
     return null;
-  } else {
+  }
+  else {
     obj.name = "Janice Lee"
     return obj;
   }
@@ -101,7 +103,7 @@ rollno : 12 };
 //Sample Output: name,sclass,rollno
 
 
-Object.keys(student); //or whatever the object's name is
+Object.keys(student); //or whatever the object's name is, in this case student
 
 //---------------------------------------------------
 
@@ -114,7 +116,8 @@ function deletePropFromObj(obj, propName) {
   if(propName in obj === true) {
     delete obj[propName];
     return obj;
-  } else {
+  }
+  else {
     return false;
   }
 }
@@ -138,18 +141,17 @@ console.log(deletePropFromObj(me, "name"));
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
 //
 
-let protoPerson = {
-  sayHello(name) {
-    console.log(`Hello, my name is ${name}.`);
-  }
-};
 
 function Person(name) {
-  let newPerson = Object.create(protoPerson);
-  return newPerson.sayHello(name);
+  this.name = name;
 }
 
-//console.log(Person("Janice"));
+Person.prototype.sayHello = function() {
+  console.log("Hello, my name is " + this.name);
+}
+
+let me = new Person("Janice");
+//me.sayHello();
 
 
 //---------------------------------------------------
@@ -158,6 +160,12 @@ function Person(name) {
 // console.log's out each element in the array. You CANNOT use a standard
 // for, while, or do-while loop. (Find a way to loop through an array
 // without using the methods mentioned above.)
+
+function specialLoop(arr) {
+  arr.forEach(element => console.log(element));
+}
+
+//specialLoop([1, 2, 3, 4]);
 
 //---------------------------------------------------
 
@@ -233,6 +241,14 @@ makeChristmasTree(3):
  ***
   *
 
+makeChristmasTree(4):
+// output:
+
+  *
+ ***
+*****
+  *
+
 makeChristmasTree(0):
 // Output:
 
@@ -244,3 +260,31 @@ makeChristmasTree(-1):
 
 ERROR!
 */
+
+
+function makeChristmasTree(height) {
+  let christmasTree = "";
+  let longestLineLength = height * 2 - 3;
+  if(typeof height !== 'number' || height < 0) {
+    console.log("ERROR!");
+  }
+  else if(height === 1) {
+    christmasTree += "*";
+  }
+  else if(height === 2) {
+    christmasTree += "*\n*";
+  }
+  else if(height >= 3) {
+    for(let i = 1; i < height; i++) {
+      if(christmasTree.length !== longestLineLength) {
+        christmasTree += " ".repeat(height - i - 1);
+      }
+      christmasTree += "*".repeat(i * 2 - 1) + "\n";
+    }
+    christmasTree += " ".repeat(height - 2) + "*";
+  }
+  console.log(christmasTree);
+  return christmasTree;
+}
+
+//makeChristmasTree(8);
