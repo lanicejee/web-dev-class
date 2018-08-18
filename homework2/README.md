@@ -3,14 +3,13 @@
 
 > _The Japanese archipelago twenty years in the future. Canine saturation has reached epidemic proportions. An outbreak of dog flu rips through the city of Nagasaki. Mayor Kobayashi issues emergency orders calling for a hasty quarantine. Trash Island becomes an exiled colony, the Isle of Dogs._
 
-[![Trailer](isle of dogs.jpg)](http://www.youtube.com/watch?v=dt__kig8PVU)
+![Isle of Dogs](https://github.com/lanicejee/web-dev-class/homework2/isle of dogs.jpg "Isle of Dogs")
 
-
-Click the photo to watch the trailer.
+IMDB page: https://www.imdb.com/title/tt5104604/
 
 #### General thoughts
 
-This was my first Wes Anderson movie! I thought I'd write some thoughts. I don't have anything bad or too critical to say. I watched it on my flight home and I don't think I really had any expectations since I decided to watch it on a whim. Maybe that worked in the movie's favor, but I really enjoyed it. 
+This was my first Wes Anderson movie! I thought I'd write some thoughts. I don't have anything bad or too critical to say. I watched it on my flight home and I don't think I really had any expectations since I decided to watch it on a whim. Maybe that worked in the movie's favor, but I really enjoyed it.
 
 I was rather surprised by how... optimistic it became. Judging solely from Wes Anderson's cinematic style, which is recognizable in an instant, I would think that every movie of his would have some depressing, ulterior motive. Like how **edgy** movies go. I know that's unfounded-- like _Moonrise Kingdom_ looks happy at first glance (whether it actually is, I'm not sure)-- but _Isle of Dogs_ was thought provoking but not creepy or hopeless. Basically, it's a lot warmer than I initially thought it would be.
 
