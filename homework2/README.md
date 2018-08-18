@@ -3,7 +3,7 @@
 
 > _The Japanese archipelago twenty years in the future. Canine saturation has reached epidemic proportions. An outbreak of dog flu rips through the city of Nagasaki. Mayor Kobayashi issues emergency orders calling for a hasty quarantine. Trash Island becomes an exiled colony, the Isle of Dogs._
 
-![Isle of Dogs](isle of dogs.jpg)
+<img src="isle-of-dogs.jpg" alt = "Isle of Dogs"/>
 
 IMDB page: https://www.imdb.com/title/tt5104604/
 
