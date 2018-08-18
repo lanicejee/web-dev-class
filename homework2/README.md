@@ -35,5 +35,5 @@ It's refreshing.
 * Tracy's passion is inspiring
 * Old hierarchies and traditions need to be challenged. Activism is a very much needed fixture of society lol
 * Chief's sentimental arc was very sweet
-* The assistant scientist's name was Yoko Ono
+* The assistant scientist's name was Yoko Ono, also voiced by Yoko Ono herself
 * The storylines mesh! I love it when that happens and is done well
