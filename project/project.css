@@ -1,0 +1,96 @@
+body {
+  font-family: 'Kosugi', sans-serif;
+  color: white;
+  background: url("fall.JPG");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 350%;
+}
+
+h2 {
+  font-size: 150%;
+}
+
+h1, h2 {
+  font-weight: lighter;
+}
+
+/* Using rgb to also set opacity to 0.7 */
+h1, h2, p {
+  background-color: rgb(167, 234, 129, 0.7)
+}
+
+#container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 425px;
+  transform: translateY(70%);
+}
+
+#menu-button {
+  background: url("menu-icon.jpg");
+  background-size: cover;
+  opacity: .7;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+}
+
+#menu-button:hover {
+  opacity: 1;
+}
+
+
+#sidenav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate3d(-100vw, 0, 0);
+  width: 50vw;
+  height: 100vw;
+  transition: transform .5s cubic-bezier(.17, .67, .16, .67);
+  /* cubic-bezier curve to control the speed and appearance of the transition */
+  background-color: pink;
+  z-index: 1000;
+  /* for a greater stack order */
+}
+
+#sidenav.show {
+  transform: translate3d(0vw, 0, 0);
+}
+
+#page-mask.show {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+
+#sidenav ul {
+  list-style-type: none;
+  font-size: 200%;
+  margin-left: 35%;
+  margin-right: auto;
+  width: 10%;
+  transform: translateY(100%);
+}
+
+#sidenav li {
+  margin-bottom: 50%;
+}
+
+#sidenav a {
+  text-decoration: none;
+  color: white;
+}
+
+#sidenav a:hover {
+  text-decoration: line-through;
+}
