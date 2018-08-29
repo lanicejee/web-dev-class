@@ -1,4 +1,5 @@
 body {
+  padding: 1px;
   font-family: 'Kosugi', sans-serif;
   color: white;
   background: url("fall.JPG");
@@ -19,9 +20,17 @@ h1, h2 {
   font-weight: lighter;
 }
 
+p {
+  font-size: 110%;
+}
+
+h2, p {
+  line-height: 1.6;
+}
+
 /* Using rgb to also set opacity to 0.7 */
-h1, h2, p {
-  background-color: rgb(167, 234, 129, 0.7)
+h1, h2 span, p span {
+  background-color: rgb(58, 107, 61, 0.7);
 }
 
 #container {
@@ -29,7 +38,7 @@ h1, h2, p {
   margin-left: auto;
   margin-right: auto;
   width: 425px;
-  transform: translateY(70%);
+  transform: translateY(50%);
 }
 
 #menu-button {
@@ -39,6 +48,9 @@ h1, h2, p {
   width: 100px;
   height: 100px;
   position: fixed;
+  transform: translateY(40vh);
+  /* vertically centers the menu button */
+  border-color: inherit;
 }
 
 #menu-button:hover {
@@ -55,7 +67,7 @@ h1, h2, p {
   height: 100vw;
   transition: transform .5s cubic-bezier(.17, .67, .16, .67);
   /* cubic-bezier curve to control the speed and appearance of the transition */
-  background-color: pink;
+  background-color: rgb(255, 186, 215);
   z-index: 1000;
   /* for a greater stack order */
 }
@@ -75,15 +87,15 @@ h1, h2, p {
 
 #sidenav ul {
   list-style-type: none;
-  font-size: 200%;
   margin-left: 35%;
-  margin-right: auto;
-  width: 10%;
-  transform: translateY(100%);
+  padding-left: 0;
+  font-size: 200%;
+  width: 100%;
+  transform: translateY(25vh);
 }
 
 #sidenav li {
-  margin-bottom: 50%;
+  margin-bottom: 5%;
 }
 
 #sidenav a {
@@ -93,4 +105,41 @@ h1, h2, p {
 
 #sidenav a:hover {
   text-decoration: line-through;
+}
+
+/* dropdown all refers to the "Clips" portion of the menu. */
+
+/* div in which every dropdown element resides */
+.dropdown {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.dropdown--button {
+  background-color: inherit;
+  border-color: rgb(255, 186, 215);
+  font-family: 'Kosugi', sans-serif;
+  font-size: 108%;
+  color: white;
+  padding-left: 0px;
+  margin-bottom: 15%;
+}
+
+.dropdown--item {
+  display: none;
+  font-size: 60%;
+  padding-left: 5%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* When the button (which is "Clips") is hovered over, then its items
+will drop down */
+.dropdown:hover .dropdown--item {
+  display: block;
+}
+
+/* Adjusts the bottom margin to maintain equal spacing */
+.dropdown:hover .dropdown--button {
+  margin-bottom: 5%;
 }

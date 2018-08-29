@@ -7,18 +7,24 @@
     <link href="https://fonts.googleapis.com/css?family=Kosugi" rel="stylesheet">
   </head>
   <body>
+    <button id="menu-button"></button>
     <div id="container">
       <h1>Hi, I'm Janice.</h1>
-      <h2>I'm an aspiring journalist currently attending NYU.</h2>
+      <h2><span>I'm an aspiring journalist currently attending NYU.</span></h2>
       <div id="about">
-        <p>I’m a senior majoring in Psychology and minoring in Creative Writing and French. I’m the current Opinion Editor for the Washington Square News. I enjoy the simple pleasures of going on picnics, watching sitcoms, and eating ice cream.</p>
+        <p><span>I’m a senior majoring in Psychology and minoring in Creative Writing and French. I’m the current Opinion Editor for the Washington Square News. I enjoy the simple pleasures of going on picnics, watching sitcoms, and eating ice cream.</span></p>
       </div>
     </div>
     <div id="page-mask"></div>
-    <button id="menu-button"></button>
     <div id="sidenav">
       <ul>
-        <li><a href="https://www.nyunews.com/staff/?writer=Janice%20Lee">Clips</a></li>
+        <div class="dropdown">
+          <li><button class="dropdown--button">Clips</button></li>
+          <div>
+            <li><a class="dropdown--item" href="https://www.nyunews.com/staff/?writer=Janice%20Lee">Washington Square News</a></li>
+            <li><a class="dropdown--item" href="https://blendtw.com/?s=Janice+Lee">Blend</a></li>
+          </div>
+        </div>
         <li><a href="https://janicejlee.wordpress.com/">Music</a></li>
         <li><a href="https://twitter.com/janicejylee">Twitter</a></li>
         <li><a href="https://www.linkedin.com/in/janice-lee-6b1504151/">LinkedIn</a></li>

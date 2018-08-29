@@ -36,6 +36,8 @@ function hideNav() {
 // The side navigation will appear
 menuButton.addEventListener("click", showNav, false);
 
-// When anywhere in #sidenav is clicked, hideNav will execute
+// When anywhere in #sidenav or #page-mask (anywhere on the page that is not a
+// menu link) is clicked, hideNav will execute
 // The side navigation will disappear
+pageMask.addEventListener("click", hideNav, false);
 sidenav.addEventListener("click", hideNav, false);
