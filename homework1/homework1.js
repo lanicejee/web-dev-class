@@ -2,6 +2,20 @@
 // result of the first argument raised to the power of the second argument.
 // For example: if argument1 = 2 and argument2 = 8, the function should return 2^8.
 
+//{BRIAN}> Good use of the for-loop here. Remember to check the type of your vars!
+//{BRIAN}> There is a built-in operator called 
+//{BRIAN}> the exponent operator which looks like this: "**". Thus, you could rewrite
+//{BRIAN}> this function in the following way:
+
+/*{BRIAN}>
+function pow(base, exponent) {
+  if (typeof base !== 'number' || typeof exponent !== 'number') {
+    return Error("Not a number!");
+  }
+  return base ** exponent;
+}
+*/
+
 function pow(base, exponent) {
   let amount = 1;
   for(let n = 0; n < exponent; n++) {
@@ -22,7 +36,29 @@ function pow(base, exponent) {
 function numberArrayValidator(arr) {
   let counter = 0;
   for(let element of arr) {
-    if(typeof element === 'number') {
+    /*{BRIAN}>
+    The for-loop here will automatically loop through all the elements in the
+    array; there is no need to use a counter. Additionally, the first if-block
+    is not needed since we only want to check if an element in the array is NOT
+    a number. Thus, we only really need 1 if-block:
+
+    if (typeof element !== "number") {
+      return false;
+    }
+
+    We return true outside of the for-loop because if the for-loop exits, this
+    means that we have not encountered a non-numeric value.
+
+    Putting this all together, it might look like this:
+
+    for (...) {
+      if (...) {
+        return false;
+      }
+    }
+    return true;
+    */
+    if(typeof element === 'number') { 
       counter++;
       continue;
     }
@@ -44,7 +80,19 @@ function numberArrayValidator(arr) {
 // If it does, return true. Otherwise, return false.
 
 function objectHasNameProp(obj) {
-  if("name" in obj === true) {
+  /*{BRIAN}>
+  NICE use of the 'in' operator! Keep in mind that "truthy" values automatically
+  evaluate to true or false--essentially what this means is that we dont need
+  to check if "name" in obj === true, we just need to make sure "name" exists in
+  obj.
+
+  What this looks like in code:
+  if ("name" in obj) {...}
+    
+  ^ this evaluates to if (true) {...} or if (false) {...}
+
+  */
+  if("name" in obj === true) { // Don't need the "=== true part".
     return true;
   }
   else {
@@ -70,6 +118,8 @@ console.log(objectHasNameProp(me));
 // * and set its value to be your full name as a string.
 // * Return the object.
 
+/*{BRIAN}> NICE! Good work here.
+*/
 function addNamePropToObject(obj) {
   if(typeof obj !== 'object') {
     return null;
@@ -95,6 +145,11 @@ console.log(addNamePropToObject(me));
 // Write a JavaScript program to list the properties of a JavaScript object.
 // Sample object:
 
+
+/*{BRIAN}>
+Good work here. Can you write this as a function? What if you have to print this
+to the screen NOT as an array?
+*/
 const student = {
 name : "David Rayy",
 sclass : "VI",
@@ -105,6 +160,7 @@ rollno : 12 };
 
 Object.keys(student); //or whatever the object's name is, in this case student
 
+
 //---------------------------------------------------
 
 // Write a function named "deletePropFromObj", which accepts 2 arguments:
@@ -112,8 +168,11 @@ Object.keys(student); //or whatever the object's name is, in this case student
 // object.
 // If the property does not exist, return false. Otherwise, return the deleted object.
 
+/*{BRIAN}>
+Good work here but keep in mind that you don't need "=== true". 
+*/
 function deletePropFromObj(obj, propName) {
-  if(propName in obj === true) {
+  if(propName in obj === true) { // same as above--no need to use "=== true".
     delete obj[propName];
     return obj;
   }
@@ -141,7 +200,9 @@ console.log(deletePropFromObj(me, "name"));
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
 //
 
-
+/*{BRIAN}>
+Good work!
+*/
 function Person(name) {
   this.name = name;
 }
@@ -165,6 +226,10 @@ function specialLoop(arr) {
   arr.forEach(element => console.log(element));
 }
 
+/*{BRIAN}>
+Good work here!
+*/
+
 //specialLoop([1, 2, 3, 4]);
 
 //---------------------------------------------------
@@ -180,6 +245,11 @@ function specialLoop(arr) {
 //   tell them to to wear a thick coat and snow boots.
 // * You MUST use a switch statement to finish this function.
 // * The function doesn't return anything.
+
+/*{BRIAN}>
+Good stuff. Although I didn't specify this in the requirements, you should always
+have a "default" statement for a switch-block. 
+*/
 
 function weatherChecker(forecast) {
   switch(forecast) {
@@ -283,8 +353,83 @@ function makeChristmasTree(height) {
     }
     christmasTree += " ".repeat(height - 2) + "*";
   }
-  console.log(christmasTree);
+  //console.log(christmasTree);
   return christmasTree;
 }
 
-//makeChristmasTree(8);
+// makeChristmasTree(8);
+
+
+//{BRIAN}> Great job!!!
+
+//{BRIAN}> This is good code :^)!
+/* {BRIAN}>
+This is another solution, optimized for this question:
+
+We know that the maximum # of stars in any given tree where the height >= 2 is
+represented by the following relation:
+
+MaximumNumberOfStars = 2(height - 1) - 1
+
+Example:
+height = 5, MaximumNumberOfStars = 2(5 - 1) - 1 = 8 - 1 = 7.
+    *
+   ***
+  *****
+ ******* <-- 7 stars.
+    *
+
+height = 6, MaximumNumberOfStars = 2(6 - 1) - 1 = 10 - 1 = 9.
+    *
+   ***
+  *****
+ *******
+********* <-- 9 stars.
+    *
+
+If the height is one or zero, however, then we can simply print out one or zero
+stars, respectively.
+
+We want to maximize space (amount of memory required to store your tree) and 
+time efficiency for this question. How do we do this?
+
+Since we can calculate the maximum # of stars in a given tree where height >= 2,
+we can create an array that represents the stars at any given level and continuously
+add the result to a string! Here's what that looks like:
+*/
+
+function optimizedMakeTree(height) {
+  let tree = "";
+  if (height >= 2) {
+
+    for (let i = 0; hmax = height - 1, i < hmax; i++) {
+      tree += " ".repeat(height - i - 2) + "*".repeat((i * 2) + 1) + "\n";
+    }
+
+    tree += " ".repeat(height - 2) + "*";
+    return tree;
+  }
+  else if (height < 0) {
+    return Error("You must supply a height >= 0!");
+  }
+  else {
+    return '*'.repeat(height);
+  }
+}
+
+// You can test the speed of your code against mine!
+
+// Here's the benchmarks:
+
+console.log(optimizedMakeTree(5));
+console.log(makeChristmasTree(5));
+console.log("\n\n");
+
+console.time("Optimized Code");
+optimizedMakeTree(10000);
+console.timeEnd("Optimized Code");
+
+console.time("Your Code");
+makeChristmasTree(10000);
+console.timeEnd("Your Code");
+
